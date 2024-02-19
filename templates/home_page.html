@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% block content %} 
+<!-- start section -->
+<section id="about" class="big-section bg-gradient-top-very-light-gray pb-0 pt-3 sm-pt-10">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="fw-700 text-start">ML Text processing</h2>
+            </div>
+
+            <div class="col-12">
+                <div class="row align-items-center mb-6" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="col-10">
+                        <span class="fw-700 text-uppercase fs-14 ls-05px">Spam filtering with Naive Bayes Algorithm</span>
+                    </div>
+                    <div class="col-2 text-end"> 
+                        <span class="fs-14 fw-700">01</span>
+                    </div>
+                    <div class="col-12 mt-5px"> 
+                        <div class="separator-line-2px w-100 d-block bg-dark-gray"></div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="position-relative col-xl-8 col-lg-7 form-group form-textarea" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        {% csrf_token %}
+                        <textarea id="textbox" placeholder="Paste your text here for Spam Filtering and Sentiment Analysis ..." name="comment" class="form-control mb-2 border-radius-20px border-std" rows="16"></textarea>
+
+                    </div>
+
+                    <div class="col-xl-4 col-lg-5 ps-2" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+
+                        <div class="gauge-container"></div>
+
+                        <h6 id="spamproba" class="fs-19 fw-700 ls-minus-1px text-center mb-30px">Spam probability 0%</h6>
+
+
+                        <div class="row border border-color-light-medium-gray border-radius-20px g-0 mb-10px b-shadow-std">
+                            <div class="col-3 text-center align-self-center">
+                                <img id="sentimenticon" src="static/icons/icons8-smile-100.png" class="w-45px">
+                            </div>
+                            <div class="col-9 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"> 
+                                <p>Sentiment analysis </p>
+                                <span id="sentiment-analysis" class="fw-600 text-dark-gray">Process to check it out</span>
+                            </div>
+                        </div>
+
+                        <div class="row g-0">
+                        <div class="col" style="margin-right: 4px;">
+                        <button id="process" class="btn w-100 btn-dark-gray btn-medium btn-rounded text-transform-none border-1 me-10px ls-0px mt-15px">
+                            <span>
+                                <span class="btn-double-text" data-text="Explore crafto">Process</span>
+                            </span>
+                        </button>
+                        </div>
+                        <div class="col" style="margin-left: 4px;">
+                        <button id="clear" class="btn w-100 btn-medium btn-transparent-dark-gray btn-rounded text-transform-none border-1 ls-0px mt-15px">
+                            <span>
+                                <span class="btn-double-text" data-text="Contact us">Clear</span>
+                            </span>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+
+            </div>
+        </div> 
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section id="awards" class="pb-0 pt-3 sm-pt-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row align-items-center mb-6" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="col-10">
+                        <span class="fw-700 text-uppercase fs-14 ls-05px">Spam Filtering Model specs</span>
+                    </div>
+                    <div class="col-2 text-end"> 
+                        <span class="fs-14 fw-700">02</span>
+                    </div>
+                    <div class="col-12 mt-5px"> 
+                        <div class="separator-line-2px w-100 d-block bg-dark-gray"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5 last-paragraph-no-margin md-mb-30px" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <h4 class="fw-700 ls-minus-1px mb-20px">Trained on substantial amount of data</h4>
+                        <p class="w-85 lg-w-100">This model uses Multinomial Naive Bayes algorithm for efficient text analysis. Trained and on a large 3.2GB dataset, the model is adept at distinguishing spam from legitimate messages with exceptional accuracy</p>
+                    </div>
+                    <div class="col-xl-8 col-lg-7" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <div class="row g-0">
+                            <div class="col-2 text-center align-self-center">
+                                <span class="text-dark-gray fs-14 fw-600">1</span>
+                            </div>
+                            <div class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"> 
+                                <p><span class="fw-600 text-dark-gray">SMS Spam Collection Dataset</span> - public </p>
+                            </div>
+                            <div class="col-2 align-self-center text-center">
+                                <span class="text-dark-gray fs-14 fw-600">5,574 SMS</span>
+                            </div>
+                        </div>
+                        <div class="row border-top border-color-light-medium-gray g-0">
+                            <div class="col-2 text-center align-self-center">
+                                <span class="text-dark-gray fs-14 fw-600">2</span>
+                            </div>
+                            <div class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"> 
+                                <p><span class="fw-600 text-dark-gray">SpamAssassin Public Corpus</span> - public </p>
+                            </div>
+                            <div class="col-2 align-self-center text-center">
+                                <span class="text-dark-gray fs-14 fw-600">6,047 emails</span>
+                            </div>
+                        </div>
+                        <div class="row border-top border-color-light-medium-gray g-0">
+                            <div class="col-2 text-center align-self-center">
+                                <span class="text-dark-gray fs-14 fw-600">3</span>
+                            </div>
+                            <div class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"> 
+                                <p><span class="fw-600 text-dark-gray">Enron Spam Dataset</span> - public </p>
+                            </div>
+                            <div class="col-2 align-self-center text-center">
+                                <span class="text-dark-gray fs-14 fw-600">33,716 emails</span>
+                            </div>
+                        </div>
+                        <div class="row border-top g-0">
+                            <div class="col-2 text-center align-self-center">
+                                <span class="text-dark-gray fs-14 fw-600">4</span>
+                            </div>
+                            <div class="col-8 last-paragraph-no-margin ps-30px pe-30px pt-15px pb-15px border-start border-color-light-medium-gray"> 
+                                <p><span class="fw-600 text-dark-gray">TREC Spam Track Data</span> - public </p>
+                            </div>
+                            <div class="col-2 align-self-center text-center">
+                                <span class="text-dark-gray fs-14 fw-600">432,364 emails</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start footer -->
+<footer id="contact" class="position-relative overflow-hidden pb-0 pt-0">
+    <img src="media/images/demo-freelancer-03.png" class="position-absolute top-0px right-minus-100px" alt=""> 
+    <div class="container position-relative">
+        <img src="media/images/demo-freelancer-04.png" class="position-absolute top-20px right-minus-100px d-none d-md-block" alt="">
+
+        <div class="row g-0 align-items-center border-top border-2 border-color-dark-gray pt-30px mt-6 mb-3">
+            <div class="col-md-7 last-paragraph-no-margin sm-mb-20px">
+                <p>All rights reserved.</p>
+            </div>
+            <div class="col-md-5 elements-social social-text-style-01 text-start text-md-end sm-mb-20px">
+                <ul class="medium-icon dark fw-600">
+                    <li><a class="facebook" href="https://www.facebook.com/" target="_blank">Fb.</a></li>
+                    <li><a class="instagram" href="http://www.instagram.com" target="_blank">Ig.</a></li> 
+                    <li><a class="twitter" href="http://www.twitter.com" target="_blank">Tw.</a></li> 
+                    <li><a class="behance" href="http://www.behance.com/" target="_blank">Be.</a></li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+    <!-- start scroll progress -->
+<div class="scroll-progress d-none d-xxl-block">
+    <a href="#" class="scroll-top" aria-label="scroll">
+    <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+    </a>
+</div>
+<!-- end scroll progress -->
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Processing Machine Learning Project</title>
+
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" href="{% static 'css/vendors.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/icon.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/freelancer.css' %}" />
+
+     <!-- javascript libraries -->
+     <script type="text/javascript" src="{% static 'js/jquery.js' %}" defer></script>
+     <script type="text/javascript" src="{% static 'js/vendors.js' %}" defer></script> 
+     <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
+     <script type="module" src="{% static 'js/graphs.js' %}" defer></script>
+     <script type="module" src="{% static 'js/home.js' %}" defer></script>
+</head>
+<body data-mobile-nav-style="classic" class="custom-cursor">
+    <!-- start cursor -->
+    <div class="cursor-page-inner">
+        <div class="circle-cursor circle-cursor-inner"></div>
+        <div class="circle-cursor circle-cursor-outer"></div>
+    </div>
+
+    {% block content %} 
+    
+    {% endblock content %}
+
+    
+</body>
+</html>
